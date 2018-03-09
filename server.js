@@ -45,12 +45,19 @@ app.get('/', (req, res) =>{
 
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
-        pageTitle: 'About Page',
+        pageTitle: 'About Page'
     });
 });
 
 app.get('/bad', (req, res) => {
     res.send({errorMessage: 'There was an Error founding the page'});
+});
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        pageTitle: 'Projects Page',
+        portfolioMessage: 'Portfolio renders here.'
+    });
 });
 
 app.listen(port, () => {
